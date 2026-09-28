@@ -1,0 +1,118 @@
+{
+  "artist": "",
+  "pieces": [
+    {
+      "file": "placeholder_01.png",
+      "title": "Wayside Evening",
+      "year": "2026",
+      "medium": "Placeholder (procedural)",
+      "description": "Three ridgelines settle into the dusk while the sun slips behind the nearest hill."
+    },
+    {
+      "file": "placeholder_02.png",
+      "title": "Colour Field I",
+      "year": "2026",
+      "medium": "Placeholder (procedural)",
+      "description": "Two soft-edged blocks of colour hover over a deep red ground."
+    },
+    {
+      "file": "placeholder_03.png",
+      "title": "Composition with Red",
+      "year": "2026",
+      "medium": "Placeholder (procedural)",
+      "description": "Black lines divide the square into a rhythm of white, with a single loud field of red."
+    },
+    {
+      "file": "placeholder_04.png",
+      "title": "Tidewater",
+      "year": "2026",
+      "medium": "Placeholder (procedural)",
+      "description": "Late-morning light over open water, the swell breaking into white along the troughs."
+    },
+    {
+      "file": "placeholder_05.png",
+      "title": "Nocturne",
+      "year": "2026",
+      "medium": "Placeholder (procedural)",
+      "description": "A bare tree keeps watch on the hill under a full moon and a sky full of stars."
+    },
+    {
+      "file": "placeholder_06.png",
+      "title": "Orbits",
+      "year": "2026",
+      "medium": "Placeholder (procedural)",
+      "description": "Overlapping rings of colour, each one pulling at its neighbours."
+    },
+    {
+      "file": "placeholder_07.png",
+      "title": "Meadow in Points",
+      "year": "2026",
+      "medium": "Placeholder (procedural)",
+      "description": "A summer field built entirely from small dabs of colour that only resolve from a distance."
+    },
+    {
+      "file": "placeholder_08.png",
+      "title": "Colour Field II",
+      "year": "2026",
+      "medium": "Placeholder (procedural)",
+      "description": "Teal over ochre on a midnight ground: a quieter companion to Colour Field I."
+    },
+    {
+      "file": "placeholder_09.png",
+      "title": "Birch Row",
+      "year": "2026",
+      "medium": "Placeholder (procedural)",
+      "description": "White trunks stand in a line against the gold of an autumn wood."
+    },
+    {
+      "file": "placeholder_10.png",
+      "title": "Current",
+      "year": "2026",
+      "medium": "Placeholder (procedural)",
+      "description": "Parallel lines bend just enough to make the surface seem to move."
+    },
+    {
+      "file": "placeholder_11.png",
+      "title": "Gesture",
+      "year": "2026",
+      "medium": "Placeholder (procedural)",
+      "description": "Fast, loaded brushstrokes laid down in a single sitting."
+    },
+    {
+      "file": "placeholder_12.png",
+      "title": "Harbour Lights",
+      "year": "2026",
+      "medium": "Placeholder (procedural)",
+      "description": "A waterfront at night, its lit windows doubled and broken up in the black water."
+    },
+    {
+      "file": "placeholder_13.png",
+      "title": "Three Pears",
+      "year": "2026",
+      "medium": "Placeholder (procedural)",
+      "description": "A still life in the old manner: fruit, a table edge, and a single window of light."
+    },
+    {
+      "file": "placeholder_14.png",
+      "title": "First Snow",
+      "year": "2026",
+      "medium": "Placeholder (procedural)",
+      "description": "The pines on the far hill disappear one by one as the snow thickens."
+    },
+    {
+      "file": "placeholder_15.png",
+      "title": "Composition in Blue",
+      "year": "2026",
+      "medium": "Placeholder (procedural)",
+      "description": "The grid again, this time cooled down into blues and a grey."
+    },
+    {
+      "file": "placeholder_16.png",
+      "title": "The Wayside",
+      "year": "2026",
+      "medium": "Placeholder (procedural)",
+      "description": "The road runs straight to the mesas. Someone put up a sign, but nobody remembers what it said.",
+      "width_cm": 220
+    }
+  ]
+}
