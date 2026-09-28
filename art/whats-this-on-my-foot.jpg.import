@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6huscdar20t2"
-path="res://.godot/imported/placeholder_09.png-672e8a4c0481e29ca1db9b09ef85f1c3.ctex"
+uid="uid://qhq64qa48vbh"
+path="res://.godot/imported/whats-this-on-my-foot.jpg-df96ae5f6c330115bf9ff12d1be501e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/placeholder_09.png"
-dest_files=["res://.godot/imported/placeholder_09.png-672e8a4c0481e29ca1db9b09ef85f1c3.ctex"]
+source_file="res://art/whats-this-on-my-foot.jpg"
+dest_files=["res://.godot/imported/whats-this-on-my-foot.jpg-df96ae5f6c330115bf9ff12d1be501e2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.9
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

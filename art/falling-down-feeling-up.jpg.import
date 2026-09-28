@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djndmm81aej7j"
-path="res://.godot/imported/placeholder_01.png-97189a99ba0bf1f3840db49eb27964e5.ctex"
+uid="uid://c7e8vylnsbexu"
+path="res://.godot/imported/falling-down-feeling-up.jpg-68da57b4b60d598a5aa06b9badaa4c06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/placeholder_01.png"
-dest_files=["res://.godot/imported/placeholder_01.png-97189a99ba0bf1f3840db49eb27964e5.ctex"]
+source_file="res://art/falling-down-feeling-up.jpg"
+dest_files=["res://.godot/imported/falling-down-feeling-up.jpg-68da57b4b60d598a5aa06b9badaa4c06.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.9
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1eqhell7m5og"
-path="res://.godot/imported/placeholder_05.png-17376f37a238638030d317c50f288b9a.ctex"
+uid="uid://2myu0lilr8qd"
+path="res://.godot/imported/face.jpg-3360788d64a65d12c9f814c02c407e89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/placeholder_05.png"
-dest_files=["res://.godot/imported/placeholder_05.png-17376f37a238638030d317c50f288b9a.ctex"]
+source_file="res://art/face.jpg"
+dest_files=["res://.godot/imported/face.jpg-3360788d64a65d12c9f814c02c407e89.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.9
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

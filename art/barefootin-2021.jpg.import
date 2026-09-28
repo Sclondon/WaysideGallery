@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sy100wodbqif"
-path="res://.godot/imported/placeholder_15.png-d9c610bd7f2ee2d03ee9d3245c0e0737.ctex"
+uid="uid://db5o1a4o6m507"
+path="res://.godot/imported/barefootin-2021.jpg-8101d6ad07d85493e45c255c2d286ba6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/placeholder_15.png"
-dest_files=["res://.godot/imported/placeholder_15.png-d9c610bd7f2ee2d03ee9d3245c0e0737.ctex"]
+source_file="res://art/barefootin-2021.jpg"
+dest_files=["res://.godot/imported/barefootin-2021.jpg-8101d6ad07d85493e45c255c2d286ba6.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.9
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

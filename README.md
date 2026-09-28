@@ -21,7 +21,7 @@ Godot **4.7**, Compatibility renderer, so the editor looks like the web build. O
 ## Hanging your own art
 
 1. Drop images (`png`, `jpg`, `webp`...) into `art/`. Every image there gets hung.
-2. Delete the `placeholder_*.png` files and their entries in `art/catalog.json`.
+2. Remove any images you no longer want hung, and their entries in `art/catalog.json`.
 3. Describe your pieces in `art/catalog.json` (all fields are optional):
 
 ```json
@@ -51,7 +51,7 @@ Godot **4.7**, Compatibility renderer, so the editor looks like the web build. O
 - The top-level `artist` applies to every piece unless a piece sets its own.
 - Rooms get added automatically: 5 pieces fit in one room, then 6 more per extra room.
 
-Images are imported uncompressed with mipmaps, capped at 2048 px (`[importer_defaults]` in
+Images are imported as high-quality WebP with mipmaps, capped at 2048 px (`[importer_defaults]` in
 `project.godot`). Larger files are scaled down on import, so there's no need to resize them first.
 
 ## Project layout
@@ -63,11 +63,8 @@ Images are imported uncompressed with mipmaps, capped at 2048 px (`[importer_def
 | `scripts/art_catalog.gd` | finds images in `art/` and reads `catalog.json` |
 | `scripts/player.gd` | first-person walker |
 | `shaders/floor.gdshader` | procedural oak plank floor |
-| `scripts/tools/bake_placeholders.gd` | paints the placeholder pictures |
 | `fonts/` | Cormorant Garamond and Jost (SIL OFL, licences alongside) |
 
-Regenerate the placeholders with
-`godot --headless --path . -s scripts/tools/bake_placeholders.gd` (this overwrites `art/catalog.json`).
 
 ## Web build
 

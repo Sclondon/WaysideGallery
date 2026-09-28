@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rtje1jiewcoc"
-path="res://.godot/imported/placeholder_12.png-0deefcdb670e1c3c89dbfc6b2a4dece1.ctex"
+uid="uid://dfdvrw58ssx6n"
+path="res://.godot/imported/owen.jpg-dc9a7d71e967c2f998087307aba4c783.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/placeholder_12.png"
-dest_files=["res://.godot/imported/placeholder_12.png-0deefcdb670e1c3c89dbfc6b2a4dece1.ctex"]
+source_file="res://art/owen.jpg"
+dest_files=["res://.godot/imported/owen.jpg-dc9a7d71e967c2f998087307aba4c783.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.9
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1c4w14dex1xa"
-path="res://.godot/imported/placeholder_07.png-469d1b1d327079a314cc0f11a8ab0ac3.ctex"
+uid="uid://cqm42y2r4owi"
+path="res://.godot/imported/kat.jpg-945df382f6604e457eb451a0f92fde0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/placeholder_07.png"
-dest_files=["res://.godot/imported/placeholder_07.png-469d1b1d327079a314cc0f11a8ab0ac3.ctex"]
+source_file="res://art/kat.jpg"
+dest_files=["res://.godot/imported/kat.jpg-945df382f6604e457eb451a0f92fde0b.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.9
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

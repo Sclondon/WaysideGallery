@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cymq3mjb0qiii"
-path="res://.godot/imported/placeholder_06.png-b812fa453a4f2f2546b1c59d0184fd13.ctex"
+uid="uid://cvp1sl1th3go8"
+path="res://.godot/imported/hobo-frog.jpg-ff2ec4d325f288c5201acc21f96e14a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/placeholder_06.png"
-dest_files=["res://.godot/imported/placeholder_06.png-b812fa453a4f2f2546b1c59d0184fd13.ctex"]
+source_file="res://art/hobo-frog.jpg"
+dest_files=["res://.godot/imported/hobo-frog.jpg-ff2ec4d325f288c5201acc21f96e14a6.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.9
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

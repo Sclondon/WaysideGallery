@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dola6nen1xch"
-path="res://.godot/imported/placeholder_13.png-270d538503a09815074250bee38e1f76.ctex"
+uid="uid://ccrhc50jh2xvu"
+path="res://.godot/imported/red-rabbit.jpg-b90a08468bfc75cd4bdbce7a7e8e5eb9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/placeholder_13.png"
-dest_files=["res://.godot/imported/placeholder_13.png-270d538503a09815074250bee38e1f76.ctex"]
+source_file="res://art/red-rabbit.jpg"
+dest_files=["res://.godot/imported/red-rabbit.jpg-b90a08468bfc75cd4bdbce7a7e8e5eb9.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.9
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1

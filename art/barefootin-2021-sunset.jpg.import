@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnod6aj478ygf"
-path="res://.godot/imported/placeholder_02.png-c3ef65a87de05b174dfb2ac832defb3c.ctex"
+uid="uid://cwg1nyudhnyig"
+path="res://.godot/imported/barefootin-2021-sunset.jpg-a6523e34aad4132091f0f1361aad61c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/placeholder_02.png"
-dest_files=["res://.godot/imported/placeholder_02.png-c3ef65a87de05b174dfb2ac832defb3c.ctex"]
+source_file="res://art/barefootin-2021-sunset.jpg"
+dest_files=["res://.godot/imported/barefootin-2021-sunset.jpg-a6523e34aad4132091f0f1361aad61c1.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.9
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
