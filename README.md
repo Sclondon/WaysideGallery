@@ -1,8 +1,10 @@
 # Wayside Gallery
 
 A virtual gallery you can walk through. Rooms open onto each other along one corridor
-and the artwork hangs on the walls under picture lights. Aim at a piece to see its
-title, then step up to it to read the wall text and browse from piece to piece.
+and the artwork hangs on the walls under picture lights. There's deliberately no
+on-screen UI (no crosshair, no pop-ups): each piece has a wall label beside it with its
+title, artist, year, medium and description, and a sign by the entrance explains the
+controls. Walk up close to read.
 
 Godot **4.7**, Compatibility renderer, so the editor looks like the web build. Open
 `project.godot` and press F5.
@@ -12,11 +14,9 @@ Godot **4.7**, Compatibility renderer, so the editor looks like the web build. O
 | | Keyboard / mouse | Gamepad | Touch |
 |---|---|---|---|
 | Walk | WASD, ↑/↓ | left stick | drag on the left side |
-| Look | mouse (click to capture), ←/→ turn | right stick | drag on the right side |
+| Look | click, then the mouse; ←/→ turn | right stick | drag on the right side |
 | Stroll faster | Shift | L3 | |
-| Look closer | E / Enter / Space / click | A | tap the picture |
-| Previous / next piece | ← → or A D, Q | d-pad, LB / RB | swipe, or the buttons |
-| Back to walking | E / Esc / Backspace | B | Back button |
+| Let go of the mouse | Esc | | |
 
 ## Hanging your own art
 
@@ -58,11 +58,10 @@ Images are imported uncompressed with mipmaps, capped at 2048 px (`[importer_def
 
 | Path | What |
 |---|---|
-| `scripts/main.gd` | game flow: welcome card, walking, viewing a piece, touch input, autotest |
-| `scripts/gallery.gd` | builds the rooms, doors, benches, lights, frames and plaques, and hangs the art |
+| `scripts/main.gd` | sets up the scene, input and touch controls, autotest |
+| `scripts/gallery.gd` | builds the rooms, doors, benches, lights, frames, wall labels and welcome sign, and hangs the art |
 | `scripts/art_catalog.gd` | finds images in `art/` and reads `catalog.json` |
 | `scripts/player.gd` | first-person walker |
-| `scripts/hud.gd` | on-screen UI: prompt, wall-text card, touch joystick, fades |
 | `shaders/floor.gdshader` | procedural oak plank floor |
 | `scripts/tools/bake_placeholders.gd` | paints the placeholder pictures |
 | `fonts/` | Cormorant Garamond and Jost (SIL OFL, licences alongside) |
@@ -82,4 +81,4 @@ To update it, export the **Web** preset
 ```
 godot --path . -- --autotest=C:/some/folder
 ```
-Walks in, views a few pieces, saves screenshots to that folder and quits.
+Stands at the entrance, the welcome sign, a piece and its label, and the end wall, saves screenshots to that folder and quits.

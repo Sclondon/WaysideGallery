@@ -19,18 +19,3 @@ var center := Vector3.ZERO    ## middle of the picture surface, world space
 var normal := Vector3.BACK    ## direction the picture faces (out of the wall)
 var outer_size := Vector2.ONE ## picture plus frame, as hung
 var clearance := 10.0         ## open floor in front of the wall, metres
-
-
-## "Title, 2024" style line for plaques and prompts.
-func caption() -> String:
-	return title if year.is_empty() else "%s, %s" % [title, year]
-
-
-## "Artist · Medium" (whichever are known).
-func details() -> String:
-	var parts := PackedStringArray()
-	if not artist.is_empty():
-		parts.append(artist)
-	if not medium.is_empty():
-		parts.append(medium)
-	return "  ·  ".join(parts)

@@ -15,7 +15,10 @@ const MAX_ART := Vector2(2.6, 2.4)
 const FEATURE_MAX := Vector2(7.0, 2.8)
 const SPOT_OUT := 2.1      ## how far from the wall the picture lights hang
 
-const ART_LAYER := 2       ## collision layer the pictures sit on, for aiming at them
+const LABEL_W := 0.5       ## wall label width, metres
+const LABEL_GAP := 0.3     ## between frame and label
+const LABEL_TOP := 1.62    ## top edge of the wall labels, about eye level
+const TEXT_PX := 0.0005    ## metres per font pixel on wall text
 
 var spawn_position := Vector3(0.0, 0.0, -1.8)
 
@@ -23,7 +26,7 @@ var _wall_mat := _material(Color(0.9, 0.88, 0.84), 0.95)
 var _ceiling_mat := _material(Color(0.82, 0.8, 0.77), 1.0)
 var _trim_mat := _material(Color(0.2, 0.15, 0.11), 0.6)
 var _fixture_mat := _material(Color(0.08, 0.08, 0.08), 0.4)
-var _plaque_mat := _material(Color(0.95, 0.94, 0.91), 0.8)
+var _plaque_mat := _material(Color(0.99, 0.985, 0.97), 0.8)
 var _skylight_mat := _emissive(Color(0.95, 0.92, 0.86), 0.55)
 var _floor_mat := ShaderMaterial.new()
 var _frame_mats := {
@@ -57,6 +60,55 @@ func build(pieces: Array[ArtPiece]) -> void:
 		var sign := _label("WAYSIDE GALLERY", Style.serif(600), 150, 0.0026, Color(0.24, 0.2, 0.17))
 		sign.position = Vector3(0.0, (DOOR_H + WALL_H) * 0.5 + 0.02, -ROOM_D + WALL_T * 0.5 + 0.01)
 		add_child(sign)
+	_welcome_sign(Vector3(1.75, 0.0, -4.1))
+
+
+## Free-standing sign by the entrance saying how to get around.
+func _welcome_sign(at: Vector3) -> void:
+	var stand := Node3D.new()
+	add_child(stand)
+	stand.position = at
+	var eye := spawn_position + Vector3(0.0, 1.6, 0.0)
+	stand.look_at(Vector3(eye.x, 0.0, eye.z), Vector3.UP, true)
+	var board := _material(Color(0.16, 0.13, 0.11), 0.7)
+	_box(Vector3(0.0, 0.8, -0.02), Vector3(0.06, 1.6, 0.04), _fixture_mat, false, stand)
+	_box(Vector3(0.0, 0.015, -0.02), Vector3(0.45, 0.03, 0.3), _fixture_mat, true, stand)
+	var panel := _text_panel([
+		["Wayside Gallery", Style.serif(600), 110, Style.PAPER, 24],
+		["Walk with W A S D or the arrow keys, and hold Shift to stroll a little faster.", Style.sans(400), 44, Style.PAPER, 16],
+		["Click, then move the mouse to look around. Esc lets go of the mouse.", Style.sans(400), 44, Style.PAPER, 16],
+		["On a phone or tablet, drag on the left of the screen to walk and on the right to look.", Style.sans(400), 44, Style.PAPER, 30],
+		["Each work is described on the wall beside it. Step up close to read.", Style.serif(500), 52, Color(Style.PAPER, 0.8), 0],
+	], 0.62, board, 0.045)
+	panel.position = Vector3(0.0, 1.75, 0.0)
+	stand.add_child(panel)
+
+
+## A board of stacked text lines ([text, font, size, colour, gap below] each, empty text
+## skipped). The returned node's origin is the board's top centre; the text faces +Z.
+func _text_panel(lines: Array, width: float, backing: Material, pad := 0.035) -> Node3D:
+	var node := Node3D.new()
+	var inner_px := (width - pad * 2.0) / TEXT_PX
+	var y := -pad
+	var last_gap := 0.0
+	for line: Array in lines:
+		var text: String = line[0]
+		if text.is_empty():
+			continue
+		var font: Font = line[1]
+		var size: int = line[2]
+		var l := _label(text, font, size, TEXT_PX, line[3])
+		l.width = inner_px
+		l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		l.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		l.vertical_alignment = VERTICAL_ALIGNMENT_TOP
+		l.position = Vector3(pad - width * 0.5, y, 0.014)
+		node.add_child(l)
+		last_gap = float(line[4]) * TEXT_PX
+		y -= font.get_multiline_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, inner_px, size).y * TEXT_PX + last_gap
+	var height := -y - last_gap + pad
+	_box(Vector3(0.0, -height * 0.5, 0.006), Vector3(width, height, 0.012), backing, false, node)
+	return node
 
 
 ## Builds room i and returns its picture slots in visiting order; the last room's
@@ -168,36 +220,19 @@ func _hang(p: ArtPiece, index: int, slot: Dictionary, feature: bool) -> void:
 			_box(Vector3(0.0, s * (size.y + border) * 0.5, depth * 0.5), Vector3(outer.x, border, depth), mat, false, root)
 			_box(Vector3(s * (size.x + border) * 0.5, 0.0, depth * 0.5), Vector3(border, size.y, depth), mat, false, root)
 
-	# plaque to the right, at the height people read wall text
-	var plaque := Node3D.new()
-	plaque.position = Vector3(outer.x * 0.5 + 0.45, 1.3 - centre.y, 0.0)
-	root.add_child(plaque)
-	_box(Vector3(0.0, 0.0, 0.006), Vector3(0.4, 0.19, 0.012), _plaque_mat, false, plaque)
-	var title := _label(p.title, Style.serif(700), 44, 0.0007, Style.INK)
-	title.position = Vector3(0.0, 0.03, 0.013)
-	title.width = 0.36 / 0.0007
-	title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	plaque.add_child(title)
+	# the wall label to the right, its top at eye level
 	var byline := PackedStringArray()
 	for bit in [p.artist, p.year]:
 		if not bit.is_empty():
 			byline.append(bit)
-	var sub := _label(", ".join(byline), Style.sans(400), 32, 0.0007, Style.MUTED)
-	sub.position = Vector3(0.0, -0.05, 0.013)
-	plaque.add_child(sub)
-
-	# something to aim at
-	var body := StaticBody3D.new()
-	body.collision_layer = ART_LAYER
-	body.collision_mask = 0
-	body.set_meta("piece", index)
-	var shape := CollisionShape3D.new()
-	var box := BoxShape3D.new()
-	box.size = Vector3(outer.x, outer.y, 0.1)
-	shape.shape = box
-	shape.position.z = 0.05
-	body.add_child(shape)
-	root.add_child(body)
+	var label := _text_panel([
+		[p.title, Style.serif(700), 80, Style.INK, 14],
+		[", ".join(byline), Style.sans(400), 44, Style.INK, 6],
+		[p.medium, Style.sans(400), 40, Style.MUTED, 34],
+		[p.description, Style.serif(500), 52, Style.INK, 0],
+	], LABEL_W, _plaque_mat)
+	label.position = Vector3(outer.x * 0.5 + LABEL_GAP + LABEL_W * 0.5, LABEL_TOP - centre.y, 0.0)
+	root.add_child(label)
 
 	_picture_light(centre, n, outer, feature)
 
@@ -217,7 +252,9 @@ func _picture_light(centre: Vector3, n: Vector3, outer: Vector2, feature: bool) 
 	add_child(spot)
 	spot.look_at_from_position(at, centre, Vector3.UP if absf(n.y) < 0.9 else Vector3.FORWARD)
 	spot.spot_range = reach + 2.0
-	spot.spot_angle = clampf(rad_to_deg(atan((outer.length() * 0.5 + 0.35) / reach)), 15.0, 60.0)
+	# wide enough to take in the wall label beside the picture too
+	var cover := maxf(outer.length() * 0.5, outer.x * 0.5 + LABEL_GAP + LABEL_W) + 0.3
+	spot.spot_angle = clampf(rad_to_deg(atan(cover / reach)), 15.0, 60.0)
 	spot.spot_angle_attenuation = 0.6
 	spot.spot_attenuation = 0.4
 	spot.light_energy = 2.2 if feature else 1.8
